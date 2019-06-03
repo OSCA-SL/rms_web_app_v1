@@ -30,6 +30,18 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        //insert super admin
+        \Illuminate\Support\Facades\DB::table('users')->insert([
+            'first_name' => "Super",
+            "last_name" => "Admin",
+            "email" => "admin@osca.lk",
+            "password" => \Illuminate\Support\Facades\Hash::make('Osca@radio'),
+            "dob" => "2019-06-01",
+            "nic" => "123456789V",
+            "role" => 1,
+            "added_by" => 0
+        ]);
     }
 
     /**

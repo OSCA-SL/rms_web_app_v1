@@ -17,7 +17,7 @@ class CreateChannelFeesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('channel_id');
             $table->dateTime('effective_from');
-            $table->decimal('fee', 8, 2);
+            $table->decimal('fee', 8, 2)->default(100);
             $table->unsignedBigInteger('added_by');
             $table->timestamps();
         });

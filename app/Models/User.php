@@ -38,4 +38,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function artists(){
+        return $this->hasMany('App\Models\Artist');
+    }
+
+    public function channelContacts(){
+        return $this->hasMany('App\Models\Channel', 'contact_user');
+    }
+
+    public function channelAdds(){
+        return $this->hasMany('App\Models\Channel', 'added_by');
+    }
+
 }

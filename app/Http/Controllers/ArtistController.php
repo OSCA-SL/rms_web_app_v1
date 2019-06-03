@@ -14,7 +14,8 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        //
+        $artists = Artist::all();
+        return view('artists.index', ['artists' => $artists]);
     }
 
     /**
@@ -24,7 +25,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        return view('artists.create');
     }
 
     /**
