@@ -26,8 +26,8 @@
     <!-- Animation Css -->
     <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- Morris Chart Css-->
-    <link href="/plugins/morrisjs/morris.css" rel="stylesheet" />
+    {{--<!-- Morris Chart Css-->
+    <link href="/plugins/morrisjs/morris.css" rel="stylesheet" />--}}
 
     <!-- Custom Css -->
     <link href="/css/style.css" rel="stylesheet">
@@ -35,8 +35,12 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="/css/jquery.toast.min.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
+
+    @yield('styles')
 </head>
 
 <body class="theme-red">
@@ -336,21 +340,33 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="/images/user.png" width="48" height="48" alt="User" />
+                <img src="{{ auth()->user()->image }}" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                <div class="email">john.doe@example.com</div>
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
+                </div>
+                <div class="email">{{ auth()->user()->email }}</div>
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                        {{--<li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
                         <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                        <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>--}}
                         <li role="separator" class="divider"></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="material-icons">input</i>{{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -875,7 +891,7 @@
 <script src="/plugins/bootstrap/js/bootstrap.js"></script>
 
 <!-- Select Plugin Js -->
-<script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+{{--<script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>--}}
 
 <!-- Slimscroll Plugin Js -->
 <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -886,7 +902,7 @@
 <!-- Jquery CountTo Plugin Js -->
 <script src="/plugins/jquery-countto/jquery.countTo.js"></script>
 
-<!-- Morris Plugin Js -->
+{{--<!-- Morris Plugin Js -->
 <script src="/plugins/raphael/raphael.min.js"></script>
 <script src="/plugins/morrisjs/morris.js"></script>
 
@@ -901,14 +917,22 @@
 <script src="/plugins/flot-charts/jquery.flot.time.js"></script>
 
 <!-- Sparkline Chart Plugin Js -->
-<script src="/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="/plugins/jquery-sparkline/jquery.sparkline.js"></script>--}}
 
 <!-- Custom Js -->
 <script src="/js/admin.js"></script>
-<script src="/js/pages/index.js"></script>
 
 <!-- Demo Js -->
 <script src="/js/demo.js"></script>
+
+<script src="/js/jquery.toast.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
+<div>
+    @yield('scripts')
+</div>
+
 </body>
 
 </html>

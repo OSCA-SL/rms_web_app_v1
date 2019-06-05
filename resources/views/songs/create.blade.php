@@ -11,6 +11,9 @@
     <!-- Bootstrap DatePicker Css -->
     <link href="/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
 
+    <!-- Dropzone Css -->
+    <link href="/css/dropzone.css" rel="stylesheet">
+
     <style>
         .typeahead .dropdown-menu{
             top: 100px !important;
@@ -18,12 +21,12 @@
     </style>
 
     <!-- Bootstrap Select Css -->
-{{--    <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />--}}
+    {{--    <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />--}}
 @endsection
 
 @section('content')
     <div class="block-header">
-        <h2>ARTISTS</h2>
+        <h2>SONGS</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -41,131 +44,147 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        Add New Artists
-                        <small>Enter Artist Data</small>
+                        Add New Songs
+                        <small>Enter Song Data</small>
                     </h2>
-                    {{--<ul class="header-dropdown m-r--5">
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="javascript:void(0);">Action</a></li>
-                                <li><a href="javascript:void(0);">Another action</a></li>
-                                <li><a href="javascript:void(0);">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>--}}
                 </div>
                 <div class="body">
-                    <form action="{{ route('artists.store') }}" method="post">
+                    <form action="{{ route('songs.store') }}" method="post" id="song-form">
                         @csrf
 
-                        <h2 class="card-inside-title">Artist Related Data</h2>
-                        <div class="row clearfix">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label for="membership_number">Membership Number</label>
-                                        <input required type="text" id="membership_number" name="membership_number" class="form-control typeahead pb-2 mb-2" placeholder="Membership Number" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label for="type">Artist Type</label>
-                                        <select id="type" name="type" class="form-control show-tick select2" required>
-                                            <option value="0">-- Please select --</option>
-                                            <option value="1">Singer</option>
-                                            <option value="2">Music Director</option>
-                                            <option value="3">Song Writer</option>
-                                            <option value="4">Producer</option>
-                                            <option value="5">Unknown</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <label for="status">Artist Status</label>
-                                        <select id="status" name="status" class="form-control show-tick select2" required>
-                                            <option value="0">-- Please select --</option>
-                                            <option value="1">Active Member</option>
-                                            <option value="2">Consented Member</option>
-                                            <option value="3">Non Member</option>
-                                            <option value="4">Deceased now, but was Active</option>
-                                            <option value="5">Deceased now, but Consent Given</option>
-                                            <option value="6">Deceased now, and non member</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h2 class="card-inside-title">Basic User Data</h2>
+                        <h2 class="card-inside-title">Song Related Data</h2>
                         <div class="row clearfix">
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input required type="text" name="first_name" class="form-control" placeholder="First Name" />
+                                        <label for="title">Title</label>
+                                        <input required type="text" id="title" name="title" class="form-control typeahead pb-2 mb-2" placeholder="Song Title" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input required type="text" name="last_name" class="form-control" placeholder="Last Name" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input required type="email" name="email" class="form-control" placeholder="Email" />
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="col-sm-12">
 
                                 <div class="input-group date">
                                     <div class="form-line" id="bs_datepicker_container">
-                                        <input required name="dob" type="text" class="form-control" placeholder="Date of Birth">
-
+                                        <input name="released_at" type="text" class="form-control" placeholder="Released Date">
                                     </div>
                                     <span class="input-group-addon">
                                             <i class="material-icons">date_range</i>
                                     </span>
                                 </div>
+                            </div>
 
-
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="nic" class="form-control" placeholder="NIC" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input type="text" name="land" class="form-control" placeholder="Land Phone" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input type="text" name="address" class="form-control" placeholder="Address" />
+                                        <label for="details">Details</label>
+                                        <input required type="text" id="details" name="details" class="form-control typeahead pb-2 mb-2" placeholder="Details about this song (optional)" />
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-sm-12">
+                                <div id="pic-area" class=" mx-auto">
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="dropzone-previews" style="display: inline-block;"></div>
+                                            <div class="file-field dropzone" id="drop-image">
+                                                <div class="fallback">
+                                                    <div class="btn">
+                                                        <span>Song</span>
+                                                        <input type="file" id="song" name="song" accept="audio/*">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text" placeholder="This will be the song file that will be uploaded">
+                                                    </div>
+                                                </div>
+                                                <div class="input-field"></div>
+                                                <div id="fileDisplayArea"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <h2 class="card-inside-title">Artist Data</h2>
+                        <div class="row clearfix">
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label for="singers">Singer(s)</label>
+                                        <select id="singers" name="singers[]" class="form-control show-tick select2" required multiple="multiple">
+                                            @foreach($artists as $artist)
+                                                <option value="{{ $artist->id }}">{{ $artist->user->first_name }} {{ $artist->user->last_name }} - {{ $artist->membership_number }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label for="music_directors">Music Director(s)</label>
+                                        <select id="music_directors" name="music_directors[]" class="form-control show-tick select2" required multiple="multiple">
+                                            @foreach($artists as $artist)
+                                                <option value="{{ $artist->id }}">{{ $artist->user->first_name }} {{ $artist->user->last_name }} - {{ $artist->membership_number }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label for="song_writers">Song Writers(s)</label>
+                                        <select id="song_writers" name="song_writers[]" class="form-control show-tick select2" required multiple="multiple">
+                                            @foreach($artists as $artist)
+                                                <option value="{{ $artist->id }}">{{ $artist->user->first_name }} {{ $artist->user->last_name }} - {{ $artist->membership_number }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <label for="producers">Producers(s)</label>
+                                        <select id="producers" name="producers[]" class="form-control show-tick select2" required multiple="multiple">
+                                            @foreach($artists as $artist)
+                                                <option value="{{ $artist->id }}">{{ $artist->user->first_name }} {{ $artist->user->last_name }} - {{ $artist->membership_number }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
 
 
 
-
                         <div class="row clearfix">
+                            <div class="col-sm-12">
+                                    <div id="progress-bar-div" class="hidden">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                                 aria-valuemax="100" style="width: 100%">
+                                                <span class="sr-only">Uploading</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
                             <div class="col-sm-6 pull-right">
-                                <button type="submit" class="btn btn-primary btn-block btn-lg pull-right">Add</button>
+                                <button id="submit" type="submit" class="btn btn-primary btn-block btn-lg pull-right">Add</button>
                             </div>
 
                         </div>
@@ -331,18 +350,102 @@
 
     <script src="/js/bootstrap3-typeahead.min.js"></script>
 
+    <!-- Dropzone Plugin Js -->
+    <script src="/plugins/dropzone/dropzone.js"></script>
+
+
 
     <script>
         var data = [];
         var i = 0;
-        @foreach($artists as $artist)
-            data[i++] = "{{ $artist->membership_number }}";
+        @foreach($songs as $song)
+            data[i++] = "{{ $artist->title }}";
         @endforeach
+
+        var myDropzone;
+
         $(document).ready(function() {
             $('.select2').select2();
 
             $('.typeahead').typeahead({ source: data, autoSelect: false});
+
+
+            //Dropzone
+            // jQuery
+
+            Dropzone.options.dropImage = {
+                dictDefaultMessage: "Drag and drop or click to upload the song file",
+                autoProcessQueue: false,
+                uploadMultiple: false,
+                parallelUploads: 100,
+                maxFiles: 1,
+                url: $('#song-form').attr('action'),
+                method: 'post' ,
+                paramName: "song", // The name that will be used to transfer the file
+                maxFilesize: 90, // MB,
+                filesizeBase: 1024,
+                addRemoveLinks: true,
+                clickable: true,
+                acceptedFiles: 'audio/*',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+
+                init: function() {
+                    myDropzone = this;
+
+                    myDropzone.on("sending", function(file, xhr, formData) {
+
+                        $('#progress-bar-div').removeClass('hidden');
+
+                        var data = $('#song-form').serializeArray();
+                        $.each(data, function(key, el) {
+                            formData.append(el.name, el.value);
+                        });
+                    });
+
+                    myDropzone.on("complete", function(file) {
+                        myDropzone.removeFile(file);
+
+                        $('#progress-bar-div').addClass('hidden');
+                    });
+                    myDropzone.on("success", function(file, serverMessage) {
+
+                        console.log(serverMessage);
+                        $.toast({
+                            heading: 'Success',
+                            text: serverMessage,
+                            showHideTransition: 'fade',
+                            icon: 'success'
+                        });
+
+                        setTimeout(function () {
+                            window.location.href = '{{ route('songs.index') }}';
+                        }, 3100);
+//
+                    });
+                    myDropzone.on("error", function(file, errorMessage) {
+
+                        console.log(errorMessage);
+                        $.toast({
+                            heading: 'Error',
+                            text: errorMessage,
+                            showHideTransition: 'fade',
+                            icon: 'error'
+                        });
+                    });
+                }
+            };
+
+
+            $('#submit').click(function (e) {
+                e.preventDefault();
+                myDropzone.processQueue();
+            });
         });
+
+
+
     </script>
 
 @endsection

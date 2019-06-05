@@ -19,6 +19,9 @@ class CreateSongArtistsTable extends Migration
             $table->unsignedBigInteger('artist_id');
             $table->unsignedBigInteger('song_id');
             $table->timestamps();
+
+            $table->index(['song_id']);
+
         });
     }
 

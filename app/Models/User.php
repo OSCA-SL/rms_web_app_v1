@@ -51,4 +51,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Channel', 'added_by');
     }
 
+    public function isAdmin()
+    {
+        return $this->role < 3;
+    }
+
 }

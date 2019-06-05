@@ -2,6 +2,9 @@
 
 return [
 
+    'radio_server' => env('RADIO_SERVER_URL', '124.43.10.115:8880/song'),
+    'radio_username' => env('API_USERNAME', 'oscarms'),
+    'radio_password' => env('API_PASSWORD', 'Osca@radio'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'OSCA RMS'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Colombo',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +122,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'YourSecretKey'),
 
     'cipher' => 'AES-256-CBC',
 

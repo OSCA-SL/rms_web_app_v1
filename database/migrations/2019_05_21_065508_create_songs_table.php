@@ -16,7 +16,7 @@ class CreateSongsTable extends Migration
         Schema::create('songs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('file_path');
+            $table->string('file_path')->nullable();
             $table->string('remote_file_path')->nullable();
             $table->date('released_at')->nullable();
             $table->unsignedBigInteger('added_by');

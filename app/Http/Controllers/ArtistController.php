@@ -3,10 +3,96 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\User;
+use App\OldArtist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class ArtistController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function seta()
+    {
+        set_time_limit(3600);
+        $oldAs = OldArtist::all();
+
+        foreach ($oldAs as $a) {
+            $user = new User;
+            $user->first_name = $a->first_name;
+            $user->last_name = $a->last_name;
+
+            $user->email = "osca.rms+a".$a->nic."@gmail.com";
+
+            $user->password = Hash::make($a->nic);
+            $user->dob = $a->dob;
+            $user->nic = $a->nic;
+            $user->mobile = $a->phone;
+
+            $user->address = $a->address;
+            $user->role = 3;
+            $user->added_by = auth()->user()->id;
+            $user->comments = $a->comments;
+            $user->save();
+
+            if ( Str::startsWith(strtolower($a->membership_number), "s") )
+            {
+                $type = 1;
+            }
+            elseif ( Str::startsWith(strtolower($a->membership_number), "md") )
+            {
+                $type = 2;
+            }
+            elseif ( Str::startsWith(strtolower($a->membership_number), "lw") )
+            {
+                $type = 3;
+            }
+            elseif ( Str::startsWith(strtolower($a->membership_number), "mb") )
+            {
+                $type = 5;
+            }
+            else{
+                $type = 6;
+            }
+
+
+            if ( Str::contains(strtolower($a->comments), "d") )
+            {
+                $status = 4;
+            }
+            elseif ( Str::contains(strtolower($a->comments), "D") )
+            {
+                $status = 4;
+            }
+            else{
+                $status = 1;
+            }
+
+
+            $artist = new Artist;
+            $artist->user_id = $user->id;
+            $artist->membership_number = $a->membership_number;
+            $artist->type = $type;
+            $artist->status = $status;
+
+            $artist->save();
+
+
+        }
+
+        return "okay";
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +111,9 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        return view('artists.create');
+        $artists = Artist::all(['membership_number']);
+
+        return view('artists.create', ['artists' => $artists]);
     }
 
     /**
@@ -36,7 +124,31 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (auth()->user()->isAdmin()){
+            $user = new User;
+            $user->first_name = $request->input('first_name');
+            $user->last_name = $request->input('last_name');
+            $user->email = $request->input('email');
+            $user->dob = $request->input('dob');
+            $user->nic = $request->input('nic');
+            $user->mobile = $request->input('mobile');
+            $user->land = $request->input('land');
+            $user->address = $request->input('address');
+            $user->role = 3;
+            $user->added_by = auth()->user()->id;
+            $user->password = Hash::make($request->input('nic'));
+            $user->save();
+
+            $artist = new Artist;
+            $artist->user_id = $user->id;
+            $artist->membership_number = $request->input('membership_number');
+            $artist->type = $request->input('type');
+            $artist->save();
+
+            return redirect()->route('artists.index')->with('status', 'Successfully saved user & artist data!');
+        }
+
+
     }
 
     /**

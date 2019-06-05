@@ -32,4 +32,29 @@ class Song extends Model
     public function writers(){
         return $this->artists()->wherePivot('type', '=', '3')->get();
     }
+
+    public function producers(){
+        return $this->artists()->wherePivot('type', '=', '4')->get();
+    }
+
+
+    /*public function getStatus()
+    {
+        if ($this->status == 1){
+            return "Active (Added by Admin)";
+        }
+        elseif ($this->status == 2){
+            return "Approved (Added by Artist)";
+        }
+        elseif ($this->status == 3){
+            return "Pending";
+        }
+        elseif ($this->status == 4){
+            return "Rejected";
+        }
+        else{
+            return "Undefined";
+        }
+    }*/
+
 }
