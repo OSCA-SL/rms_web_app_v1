@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['domain' => 'rms.osca.lk'], function () {
+Route::group(['domain' => 'rms.localhost'], function () {
 
     Route::get('/','HomeController@welcome')->name('welcome');
 

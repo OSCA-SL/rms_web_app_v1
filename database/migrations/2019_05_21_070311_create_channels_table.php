@@ -23,6 +23,16 @@ class CreateChannelsTable extends Migration
             $table->string('details')->nullable();
             $table->timestamps();
         });
+        Schema::connection('mysql_r')->create('channels', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->integer('logger');
+            $table->decimal('frequency', 8, 4); // in MHz
+            $table->unsignedBigInteger('contact_user');
+            $table->unsignedBigInteger('added_by');
+            $table->string('details')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -33,5 +43,6 @@ class CreateChannelsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('channels');
+        Schema::connection('mysql_r')->dropIfExists('channels');
     }
 }

@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="block-header">
-        <h2>ARTISTS</h2>
+        <h2>Channels</h2>
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -19,8 +19,8 @@
 
             <div class="card">
                 <div class="body">
-                    <a href="{{ route('artists.create') }}" class="btn bg-deep-orange waves-effect btn-lg">
-                        <i class="material-icons">person_add</i> Create New
+                    <a href="{{ route('channels.create') }}" class="btn bg-deep-orange waves-effect btn-lg">
+                        <i class="material-icons">playlist_add</i> Create New
                     </a>
                 </div>
 
@@ -38,7 +38,7 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        EXPORTABLE TABLE
+                        Channel List
                     </h2>
                     <ul class="header-dropdown m-r--5">
                         <li class="dropdown">
@@ -58,68 +58,58 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                             <tr>
-                                <th>Membership Number</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>NIC</th>
-                                <th>Date of Birth</th>
-                                <th title="Mobile"><i class="material-icons">smartphone</i></th>
-                                <th title="Land Phone"><i class="material-icons">phone</i></th>
-                                <th>Address</th>
-                                <th>Type</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Logger</th>
+                                <th>Frequency</th>
+                                <th>Contact User</th>
                                 <th>Added By</th>
-                                <th>Status</th>
+                                <th>Details</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
-                                <th>Membership Number</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>NIC</th>
-                                <th>Date of Birth</th>
-                                <th title="Mobile"><i class="material-icons">smartphone</i></th>
-                                <th title="Land Phone"><i class="material-icons">phone</i></th>
-                                <th>Address</th>
-                                <th>Type</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Logger</th>
+                                <th>Frequency</th>
+                                <th>Contact User</th>
                                 <th>Added By</th>
-                                <th>Status</th>
+                                <th>Details</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
                                 <th>Actions</th>
                             </tr>
                             </tfoot>
                             <tbody>
 
-                                @foreach($artists as $artist)
-                                    <tr>
-
-                                        <td>{{ $artist->membership_number }}</td>
-                                        <td>{{ $artist->user->first_name }}</td>
-                                        <td>{{ $artist->user->last_name }}</td>
-                                        <td>{{ $artist->user->email }}</td>
-                                        <td>{{ $artist->user->nic }}</td>
-                                        <td>{{ $artist->user->dob }}</td>
-                                        <td>{{ $artist->user->mobile }}</td>
-                                        <td>{{ $artist->user->land }}</td>
-                                        <td>{{ $artist->user->address }}</td>
-                                        <td>{{ $artist->getType() }}</td>
-                                        <td>{{ $artist->user->added_by }}</td>
-                                        <td>{{ $artist->getStatus() }}</td>
-                                        <td>
+                            @foreach($channels as $channel)
+                                <tr>
+                                    <td>{{ $channel->id }}</td>
+                                    <td>{{ $channel->name }}</td>
+                                    <td>{{ $channel->logger }}</td>
+                                    <td>{{ $channel->frequency }} MHz</td>
+                                    <td>{{ $channel->contactUser->first_name }} {{ $channel->contactUser->last_name }}</td>
+                                    <td>{{ $channel->addedUser->first_name }} {{ $channel->addedUser->last_name }}</td>
+                                    <td>{{ $channel->details }}</td>
+                                    <td>{{ $channel->created_at }}</td>
+                                    <td>{{ $channel->updated_at }}</td>
+                                    <td>
                                             <span>
-                                                <a href="{{ route('artists.edit', $artist->id) }}" class="btn btn-warning btn-circle waves-effect waves-circle waves-float" title="Edit">
+                                                <a href="{{ route('channels.edit', $channel->id) }}" class="btn btn-warning btn-circle waves-effect waves-circle waves-float" title="Edit">
                                                 <i class="material-icons">edit</i>
                                             </a>
-                                            <a href="{{ route('artists.destroy', $artist->id) }}" class="btn btn-danger btn-circle waves-effect waves-circle waves-float" title="Delete">
+                                            <a href="{{ route('channels.destroy', $channel->id) }}" class="btn btn-danger btn-circle waves-effect waves-circle waves-float" title="Delete">
                                                 <i class="material-icons">delete</i>
                                             </a>
                                             </span>
 
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    </td>
+                                </tr>
+                            @endforeach
 
                             </tbody>
                         </table>
@@ -150,7 +140,7 @@
     <script src="/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 
     <!-- Custom Js -->
-{{--    <script src="/js/admin.js"></script>--}}
+    {{--    <script src="/js/admin.js"></script>--}}
     <script src="/js/pages/tables/jquery-datatable.js"></script>
 
 @endsection

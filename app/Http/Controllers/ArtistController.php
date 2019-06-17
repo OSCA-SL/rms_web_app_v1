@@ -100,7 +100,13 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::paginate(15);
+        if (auth()->user()->isAdmin()){
+            $artists = Artist::all();
+        }
+        else if (auth()->user()->isArtist()){
+            $artists = Artist::where('user_id', auth()->user()->id)->get();
+        }
+
         return view('artists.index', ['artists' => $artists]);
     }
 

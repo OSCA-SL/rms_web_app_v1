@@ -51,6 +51,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Channel', 'added_by');
     }
 
+    public function isArtist()
+    {
+        return count($this->artists) > 0;
+    }
+
     public function isAdmin()
     {
         return $this->role < 3;

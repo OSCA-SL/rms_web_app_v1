@@ -22,6 +22,15 @@ class CreateFingerprintsTable extends Migration
 
             $table->primary(['hash_key', 'hash_value']);
         });
+        Schema::connection('mysql_r')->create('fingerprints', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->timestamps();
+            $table->unsignedBigInteger('hash_key');
+            $table->unsignedBigInteger('hash_value');
+            $table->unsignedBigInteger('song_id')->nullable();
+
+            $table->primary(['hash_key', 'hash_value']);
+        });
     }
 
     /**
@@ -32,5 +41,6 @@ class CreateFingerprintsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('fingerprints');
+        Schema::connection('mysql_r')->dropIfExists('fingerprints');
     }
 }
