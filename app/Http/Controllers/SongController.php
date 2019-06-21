@@ -107,7 +107,7 @@ class SongController extends Controller
             ]);
 
             $song->file_path = "/storage/songs/".$file_name;
-            $song->remote_file_path = "http://song-upload.osca.lk/storage/".$song->id;
+            $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
             $song->save();
 
             $status = $request->getStatusCode();
