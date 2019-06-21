@@ -145,11 +145,17 @@ class ArtistController extends Controller
             $user->password = Hash::make($request->input('nic'));
             $user->save();
 
+
+
             $artist = new Artist;
             $artist->user_id = $user->id;
             $artist->membership_number = $request->input('membership_number');
             $artist->type = $request->input('type');
             $artist->save();
+
+            $user->setConnection('mysql_r')->save();
+            $artist->setConnection('mysql_r')->save();
+
 
             return redirect()->route('artists.index')->with('status', 'Successfully saved user & artist data!');
         }
