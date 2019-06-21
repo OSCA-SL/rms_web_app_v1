@@ -78,6 +78,7 @@ class SongController extends Controller
 
 
         if ($request->hasFile('song')){
+            return "has song file!";
             $file = $request->file('song');
             $file_name = $song->id.".".$file->getClientOriginalExtension();
             $file->storeAs('songs', $file_name, 'public');

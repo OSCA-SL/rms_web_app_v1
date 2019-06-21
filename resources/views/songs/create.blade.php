@@ -382,7 +382,7 @@
                 url: $('#song-form').attr('action'),
                 method: 'post' ,
                 paramName: "song", // The name that will be used to transfer the file
-                maxFilesize: 90, // MB,
+                maxFilesize: 9000, // MB,
                 filesizeBase: 1024,
                 addRemoveLinks: true,
                 clickable: true,
