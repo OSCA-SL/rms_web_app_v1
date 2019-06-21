@@ -56,7 +56,7 @@ class SongController extends Controller
     public function store(Request $request)
     {
 
-        return $request->all();
+        return $request->file('song')->getClientOriginalName();
 
         $song = new Song;
         $song->title = $request->input('title');
