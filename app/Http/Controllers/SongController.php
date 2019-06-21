@@ -56,8 +56,8 @@ class SongController extends Controller
     public function store(Request $request)
     {
 
-        return $request->hasFile('song')?"has file":"doesn't have file";
-        return $request->file('song')->getClientOriginalName();
+        /*return $request->hasFile('song')?"has file":"doesn't have file";
+        return $request->file('song')->getClientOriginalName();*/
 
         $song = new Song;
         $song->title = $request->input('title');
@@ -76,10 +76,13 @@ class SongController extends Controller
 
         $song->artists()->attach($request->input('producers'), ['type' => 4]);
 
+
         if ($request->hasFile('song')){
             $file = $request->file('song');
             $file_name = $song->id.".".$file->getClientOriginalExtension();
             $file->storeAs('songs', $file_name, 'public');
+
+
 
             $client = new Client();
             $request = $client->post(config('app.radio_server'), [
@@ -102,6 +105,11 @@ class SongController extends Controller
                     ],
                 ]
             ]);
+
+            $song->file_path = "/storage/songs/".$file_name;
+            $song->remote_file_path = "http://song-upload.osca.lk/storage/".$song->id;
+            $song->save();
+
             $status = $request->getStatusCode();
             $response = $request->getBody();
 
