@@ -56,6 +56,7 @@ class SongController extends Controller
     public function store(Request $request)
     {
 
+        return $request->hasFile('song')?"has file":"doesn't have file";
         return $request->file('song')->getClientOriginalName();
 
         $song = new Song;
