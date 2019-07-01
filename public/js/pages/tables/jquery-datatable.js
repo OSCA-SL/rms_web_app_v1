@@ -12,6 +12,9 @@ function formatDate() {
 }
 
 $(function () {
+
+    console.log('this is js');
+
     $('.js-basic-example').DataTable({
         responsive: true
     });
