@@ -100,7 +100,7 @@
                                     <td>
                                         <audio controls>
                                             <source src="{{ $song->file_path }}" type="audio/mpeg">
-                                            Your browser does not support the audio tag.
+                                            {{ url($song->file_path) }}
                                         </audio>
 
                                     </td>
