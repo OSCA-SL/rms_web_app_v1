@@ -117,8 +117,8 @@ class SongController extends Controller
 
             $song->artists()->attach($request->input('producers'), ['type' => 4]);
 
-            $status = $request->getStatusCode();
-            $response = $request->getBody();
+            /*$status = $request->getStatusCode();
+            $response = $request->getBody();*/
 
 
 
