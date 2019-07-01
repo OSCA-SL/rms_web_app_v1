@@ -97,7 +97,13 @@
 
                                     <td>{{ $song->id }}</td>
                                     <td>{{ $song->title }}</td>
-                                    <td>{{ $song->file_path }}</td>
+                                    <td>
+                                        <audio controls>
+                                            <source src="{{ $song->file_path }}" type="audio/*">
+                                            Your browser does not support the audio tag.
+                                        </audio>
+
+                                    </td>
                                     <td>{{ $song->remote_file_path }}</td>
                                     <td>{{ $song->released_at }}</td>
 
