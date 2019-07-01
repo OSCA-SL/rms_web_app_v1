@@ -100,6 +100,7 @@
                                     <td>
                                         <audio controls>
                                             <source src="{{ $song->file_path }}" type="audio/mpeg">
+                                            <a href="{{ url($song->file_path) }}">{{ url($song->file_path) }}</a>
                                             {{ url($song->file_path) }}
                                         </audio>
 
