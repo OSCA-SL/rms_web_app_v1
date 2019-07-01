@@ -6,7 +6,7 @@ function formatDate() {
         year = d.getFullYear(),
         hour = d.getHours(),
         min = d.getMinutes(),
-        sec = d.setSeconds()
+        sec = d.getSeconds()
     ;
 
     if (month.length < 2) month = '0' + month;
