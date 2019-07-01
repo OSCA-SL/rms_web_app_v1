@@ -153,8 +153,8 @@ class ArtistController extends Controller
             $artist->type = $request->input('type');
             $artist->save();
 
-            $user->setConnection('mysql_r')->save();
-            $artist->setConnection('mysql_r')->save();
+            /*$user->setConnection('mysql_r')->save();
+            $artist->setConnection('mysql_r')->save();*/
 
 
             return redirect()->route('artists.index')->with('status', 'Successfully saved user & artist data!');

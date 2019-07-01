@@ -23,7 +23,7 @@ class CreateSongArtistsTable extends Migration
             $table->index(['song_id']);
 
         });
-        Schema::connection('mysql_r')->create('song_artists', function (Blueprint $table) {
+        /*Schema::connection('mysql_r')->create('song_artists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('type'); // 1 - singer, 2 - music_director, 3 - song_writer, 4 - producer
             $table->unsignedBigInteger('artist_id');
@@ -32,7 +32,7 @@ class CreateSongArtistsTable extends Migration
 
             $table->index(['song_id']);
 
-        });
+        });*/
     }
 
     /**
@@ -43,7 +43,7 @@ class CreateSongArtistsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('song_artists');
-        Schema::connection('mysql_r')->dropIfExists('song_artists');
+//        Schema::connection('mysql_r')->dropIfExists('song_artists');
 
     }
 }

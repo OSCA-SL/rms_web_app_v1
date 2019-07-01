@@ -21,14 +21,14 @@ class CreateMatchesTable extends Migration
             $table->unsignedBigInteger('song_id');
             $table->timestamps();
         });
-        Schema::connection('mysql_r')->create('matches', function (Blueprint $table) {
+        /*Schema::connection('mysql_r')->create('matches', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('stat');
             $table->dateTime('end');
             $table->unsignedBigInteger('channel_id');
             $table->unsignedBigInteger('song_id');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -39,6 +39,6 @@ class CreateMatchesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('matches');
-        Schema::connection('mysql_r')->dropIfExists('matches');
+//        Schema::connection('mysql_r')->dropIfExists('matches');
     }
 }

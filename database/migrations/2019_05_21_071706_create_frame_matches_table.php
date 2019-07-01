@@ -23,7 +23,7 @@ class CreateFrameMatchesTable extends Migration
 
             $table->index(['channel_id', 'timestamp']);
         });
-        Schema::connection('mysql_r')->create('frame_matches', function (Blueprint $table) {
+        /*Schema::connection('mysql_r')->create('frame_matches', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('timestamp');
             $table->unsignedBigInteger('channel_id');
@@ -32,7 +32,7 @@ class CreateFrameMatchesTable extends Migration
 //            $table->timestamps();
 
             $table->index(['channel_id', 'timestamp']);
-        });
+        });*/
     }
 
     /**
@@ -43,6 +43,6 @@ class CreateFrameMatchesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('frame_matches');
-        Schema::connection('mysql_r')->dropIfExists('frame_matches');
+//        Schema::connection('mysql_r')->dropIfExists('frame_matches');
     }
 }

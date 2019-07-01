@@ -69,7 +69,7 @@ class CreateUsersTable extends Migration
         ]);
 
 
-        Schema::connection('mysql_r')->create('users', function (Blueprint $table) {
+        /*Schema::connection('mysql_r')->create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name')->nullable();
@@ -122,7 +122,7 @@ class CreateUsersTable extends Migration
                 "added_by" => 0
             ],
 
-        ]);
+        ]);*/
 
     }
 
@@ -134,6 +134,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-        Schema::connection('mysql_r')->dropIfExists('users');
+//        Schema::connection('mysql_r')->dropIfExists('users');
     }
 }

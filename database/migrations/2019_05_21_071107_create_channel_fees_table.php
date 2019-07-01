@@ -21,14 +21,14 @@ class CreateChannelFeesTable extends Migration
             $table->unsignedBigInteger('added_by');
             $table->timestamps();
         });
-        Schema::connection('mysql_r')->create('channel_fees', function (Blueprint $table) {
+        /*Schema::connection('mysql_r')->create('channel_fees', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('channel_id');
             $table->dateTime('effective_from');
             $table->decimal('fee', 8, 2)->default(100);
             $table->unsignedBigInteger('added_by');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -39,6 +39,6 @@ class CreateChannelFeesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('channel_fees');
-        Schema::connection('mysql_r')->dropIfExists('channel_fees');
+        /*Schema::connection('mysql_r')->dropIfExists('channel_fees');*/
     }
 }
