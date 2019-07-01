@@ -38,6 +38,7 @@ $(function () {
                 pageSize: 'A2'
             },
             'print'
-        ]
+        ],
+        "order": [[ 0, "desc" ]]
     });
 });
