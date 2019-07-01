@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38e9525e-9e3e-4b2d-817d-99b1e4964191" name="Default Changelist" comment="" />
+    <list default="true" id="38e9525e-9e3e-4b2d-817d-99b1e4964191" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/public/js/pages/tables/jquery-datatable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/tables/jquery-datatable.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +28,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="1" />
+          <entry key="js" value="1" />
           <entry key="php" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Blade" value="4" />
+          <entry key="JavaScript" value="1" />
           <entry key="PHP" value="39" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -39,6 +43,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="18" />
+          <entry key="js" value="5" />
           <entry key="php" value="1014" />
         </counts>
       </usages-collector>
@@ -46,6 +51,7 @@
         <counts>
           <entry key=".env file" value="18" />
           <entry key="Blade" value="129" />
+          <entry key="JavaScript" value="5" />
           <entry key="PHP" value="885" />
         </counts>
       </usages-collector>
@@ -105,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SongController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="150">
+              <caret line="119" column="14" selection-start-line="119" selection-start-column="12" selection-end-line="120" selection-end-column="46" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
                 <element signature="e#2182#3071#0#PHP" />
@@ -117,10 +123,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/pages/tables/jquery-datatable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/songs/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="101" column="94" selection-start-line="101" selection-start-column="94" selection-end-line="101" selection-end-column="94" />
+            <state relative-caret-position="-77">
+              <caret line="101" column="97" selection-start-line="101" selection-start-column="97" selection-end-line="101" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -194,8 +209,9 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_21_071706_create_frame_matches_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_21_073448_create_matches_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ArtistController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SongController.php" />
         <option value="$PROJECT_DIR$/resources/views/songs/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SongController.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/tables/jquery-datatable.js" />
       </list>
     </option>
   </component>
@@ -341,6 +357,32 @@
             <path>
               <item name="WebApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebApp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -432,17 +474,18 @@
       <workItem from="1560728899939" duration="425000" />
       <workItem from="1560729372762" duration="6994000" />
       <workItem from="1561097794982" duration="10946000" />
-      <workItem from="1561963864455" duration="2122000" />
+      <workItem from="1561963864455" duration="2491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85820000" />
+    <option name="totallyTimeSpent" value="86189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -457,7 +500,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50226927" side_tool="true" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4977307" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4977307" visible="true" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -471,11 +514,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1358" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51" />
@@ -834,10 +872,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/songs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="101" column="97" selection-start-line="101" selection-start-column="97" selection-end-line="101" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SongController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="150">
+          <caret line="119" column="14" selection-start-line="119" selection-start-column="12" selection-end-line="120" selection-end-column="46" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
             <element signature="e#2182#3071#0#PHP" />
@@ -846,10 +891,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/songs/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/pages/tables/jquery-datatable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="101" column="94" selection-start-line="101" selection-start-column="94" selection-end-line="101" selection-end-column="94" />
+        <state relative-caret-position="272">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -8,7 +8,13 @@ $(function () {
         dom: 'Bfrtip',
         responsive: true,
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            'copy', 'csv', 'excel',
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'A3'
+            },
+            'print'
         ]
     });
 });
