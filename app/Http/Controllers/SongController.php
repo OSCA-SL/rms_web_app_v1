@@ -80,7 +80,7 @@ class SongController extends Controller
 
 
 
-            $client = new Client();
+            /*$client = new Client();
             $request = $client->post(config('app.radio_server'), [
                 'multipart' => [
                     [
@@ -101,9 +101,10 @@ class SongController extends Controller
                     ],
                 ]
             ]);
+            $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;*/
 
             $song->file_path = "/storage/songs/".$file_name;
-            $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
+
             $song->save();
 
             /*$song->setConnection('mysql_r');
