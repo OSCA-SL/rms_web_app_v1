@@ -21,8 +21,10 @@ $(function () {
         dom: 'Bfrtip',
         responsive: true,
         buttons: [
-            'copy', 'csv', 'excel',
-            /*{
+            'copy',
+            /*'csv',
+            'excel',
+            {
                 extend: 'pdfHtml5',
                 title: formatDate()+' Report',
                 orientation: 'landscape',
