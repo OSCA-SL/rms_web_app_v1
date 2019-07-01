@@ -11,7 +11,6 @@ $(function () {
             'copy', 'csv', 'excel',
             {
                 extend: 'pdfHtml5',
-                orientation: 'landscape',
                 pageSize: 'A3'
             },
             'print'
