@@ -110,12 +110,12 @@ class SongController extends Controller
             /*$song->setConnection('mysql_r');
             $song->save();*/
 
-            $song->artists()->attach($request->input('singers'), ['type' => 1]);
+            /*$song->artists()->attach($request->input('singers'), ['type' => 1]);
             $song->artists()->attach($request->input('music_directors'), ['type' => 2]);
 
             $song->artists()->attach($request->input('song_writers'), ['type' => 3]);
 
-            $song->artists()->attach($request->input('producers'), ['type' => 4]);
+            $song->artists()->attach($request->input('producers'), ['type' => 4]);*/
 
             /*$status = $request->getStatusCode();
             $response = $request->getBody();*/
