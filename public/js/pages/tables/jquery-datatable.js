@@ -22,12 +22,12 @@ $(function () {
         responsive: true,
         buttons: [
             'copy', 'csv', 'excel',
-            {
+            /*{
                 extend: 'pdfHtml5',
                 title: formatDate()+' Report',
                 orientation: 'landscape',
                 pageSize: 'A2'
-            },
+            },*/
             'print'
         ]
     });
