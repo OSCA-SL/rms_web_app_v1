@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('styles')
+
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+
     <!-- Wait Me Css -->
     <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
 
@@ -110,12 +113,12 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input required type="text" name="first_name" class="form-control" placeholder="First Name" />
+                                        <input required type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input required type="text" name="last_name" class="form-control" placeholder="Last Name" />
+                                        <input required type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -313,6 +316,39 @@
 @endsection
 
 @section('scripts')
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            var name_tags = [
+                @foreach($artists as $artist)
+                    "{{ $artist->first_name." ".$artist->last_name }}",
+                @endforeach
+                    ""
+            ];
+            name_tags.pop();
+            $( "#first_name" ).autocomplete({
+                source: name_tags
+            });
+
+            $( "#last_name" ).autocomplete({
+                source: name_tags
+            });
+
+            var membership_number_tags = [
+                @foreach($artists as $artist)
+                    "{{ $artist->membership_number }}",
+                @endforeach
+                    ""
+            ];
+
+            membership_number_tags.pop();
+
+            $( "#membership_number" ).autocomplete({
+                source: membership_number_tags
+            });
+        } );
+    </script>
 
     <!-- Autosize Plugin Js -->
     <script src="/plugins/autosize/autosize.js"></script>
