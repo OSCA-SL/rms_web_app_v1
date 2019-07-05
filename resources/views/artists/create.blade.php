@@ -345,7 +345,7 @@
             membership_number_tags.pop();
 
             $( "#membership_number" ).autocomplete({
-                source: membership_number_tags
+                source: name_tags
             });
         } );
     </script>
