@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('styles')
+
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+
     <!-- Wait Me Css -->
     <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
 
@@ -51,12 +54,16 @@
                 <div class="body">
                     <form action="{{ route('songs.store') }}" method="post" id="song-form">
                         @csrf
+                        {{--<div class="ui-widget">
+                            <label for="tags">Tags: </label>
+                            <input id="tags">
+                        </div>--}}
 
                         <h2 class="card-inside-title">Song Related Data</h2>
                         <div class="row clearfix">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <div class="form-line">
+                                    <div class="form-line ui-widget">
                                         <label for="title">Title</label>
                                         <input required type="text" id="title" name="title" class="form-control typeahead pb-2 mb-2" placeholder="Song Title" />
                                     </div>
@@ -352,6 +359,24 @@
 
     <!-- Dropzone Plugin Js -->
     <script src="/plugins/dropzone/dropzone.js"></script>
+
+
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            var availableTags = [
+                @foreach($songs as $song)
+                    "{{ $song->title }}",
+                @endforeach
+                ""
+            ];
+            availableTags.pop();
+            $( "#title" ).autocomplete({
+                source: availableTags
+            });
+        } );
+    </script>
 
 
 
