@@ -11,9 +11,9 @@
 |
 */
 
-$domain = config('app_domain');
+$domain = config('app.app_domain');
 
-Route::group(['domain' => 'rms.osca.lk'], function () {
+Route::group(['domain' => 'rms.'.$domain], function () {
 
     Route::get('/','HomeController@welcome')->name('welcome');
 
@@ -35,7 +35,7 @@ Route::group(['domain' => 'rms.osca.lk'], function () {
 
 });
 
-Route::group(['domain' => 'royalty.osca.lk'], function () {
+Route::group(['domain' => 'royalty'.$domain], function () {
 
     Route::get('/information','HomeController@royaltyInfo')->name('royaltyInfo');
 
