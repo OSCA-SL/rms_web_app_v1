@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.royalty')
 
 @section('content')
-    <div class="block-header">
+    <div class="block-header container">
         <h2>Royalty Information</h2>
     </div>
     <div class="row clearfix">
