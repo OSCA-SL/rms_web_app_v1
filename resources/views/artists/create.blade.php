@@ -47,6 +47,9 @@
                         Add New Artists
                         <small>Enter Artist Data</small>
                     </h2>
+                    @foreach($artists as $artist)
+                        "{{ $artist->user->first_name." ".$artist->user->last_name }}",
+                    @endforeach
                     {{--<ul class="header-dropdown m-r--5">
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
