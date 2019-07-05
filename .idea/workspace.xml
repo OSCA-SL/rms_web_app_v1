@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38e9525e-9e3e-4b2d-817d-99b1e4964191" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Events/SongUploaded.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/SongUploaded.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SongController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SongController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/SendUploadedSong.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendUploadedSong.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_21_065508_create_songs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_21_065508_create_songs_table.php" afterDir="false" />
-    </list>
+    <list default="true" id="38e9525e-9e3e-4b2d-817d-99b1e4964191" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -494,15 +487,16 @@
       <workItem from="1560729372762" duration="6994000" />
       <workItem from="1561097794982" duration="10946000" />
       <workItem from="1561963864455" duration="6545000" />
-      <workItem from="1562309886180" duration="28471000" />
+      <workItem from="1562309886180" duration="29268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118714000" />
+    <option name="totallyTimeSpent" value="119511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
