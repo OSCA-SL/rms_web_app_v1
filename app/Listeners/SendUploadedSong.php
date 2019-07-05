@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Error;
 use App\Events\SongUploaded;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,7 +12,7 @@ use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 
-class SendUploadedSong implements ShouldQueue
+class SendUploadedSong /*implements ShouldQueue*/
 {
     /**
      * Create the event listener.
@@ -66,7 +67,24 @@ class SendUploadedSong implements ShouldQueue
                 ],
             ]
         ]);
-//        $request = $client->post();
+
+        $promise->then(
+            function (ResponseInterface $res) use ($song){
+                $response = $res->getStatusCode();
+                $song->setConnection('mysql');
+                $song->hash_status = 3;
+                $song->save();
+                $song->setConnection('mysql_r');
+            },
+            function (RequestException $e){
+                $message = $e->getMessage();
+                $method = $e->getRequest()->getMethod();
+                $error = new Error;
+                $error->message = $message.", METHOD: ".$method;
+                $error->save();
+            }
+        );
+
 
 
 
