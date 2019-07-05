@@ -18,9 +18,9 @@ class CreateFingerprintsTable extends Migration
 //            $table->timestamps();
             $table->unsignedBigInteger('hash_key');
             $table->unsignedBigInteger('hash_value');
-            $table->unsignedBigInteger('song_id')->nullable();
+            $table->unsignedBigInteger('song_id');
 
-            $table->primary(['hash_key', 'hash_value']);
+            $table->primary(['hash_key', 'hash_value', 'song_id']);
         });
         /*Schema::connection('mysql_r')->create('fingerprints', function (Blueprint $table) {
 //            $table->bigIncrements('id');
