@@ -32,9 +32,21 @@ class SendUploadedSong implements ShouldQueue
     public function handle(SongUploaded $event)
     {
         $song = $event->song;
+        $file_name = $event->filename;
+        $artists = $event->artists;
+
+        $song->setConnection('mysql_r');
+        $song->save();
+
+        $song->artists()->attach($artists['singers'], ['type' => 1]);
+        $song->artists()->attach($artists['music_directors'], ['type' => 2]);
+
+        $song->artists()->attach($artists['song_writers'], ['type' => 3]);
+
+        $song->artists()->attach($artists['producers'], ['type' => 4]);
 
         $client = new Client();
-        $request = $client->post(config('app.radio_server'), [
+        $promise = $client->postAsync(config('app.radio_server'), [
             'multipart' => [
                 [
                     'name' => 'username',
@@ -54,7 +66,15 @@ class SendUploadedSong implements ShouldQueue
                 ],
             ]
         ]);
+//        $request = $client->post();
+
+
+
         $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
+        $song->save();
+
+        $song->setConnection('mysql');
+        $song->save();
 
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SongUploaded;
 use App\Models\Artist;
 use App\Models\Song;
 use GuzzleHttp\Client;
@@ -72,40 +73,23 @@ class SongController extends Controller
 
         $song->artists()->attach($request->input('producers'), ['type' => 4]);
 
+        $artists = array();
+        $artists['singers'] = $request->input('singers');
+        $artists['music_directors'] = $request->input('music_directors');
+        $artists['song_writers'] = $request->input('song_writers');
+        $artists['producers'] = $request->input('producers');
+
 
         if ($request->hasFile('song')){
             $file = $request->file('song');
             $file_name = $song->id.".".$file->getClientOriginalExtension();
             $file->storeAs('songs', $file_name, 'public');
 
-
-
-            /*$client = new Client();
-            $request = $client->post(config('app.radio_server'), [
-                'multipart' => [
-                    [
-                        'name' => 'username',
-                        'contents' => config('app.radio_username'),
-                    ],
-                    [
-                        'name' => 'password',
-                        'contents' => config('app.radio_password'),
-                    ],
-                    [
-                        'name' => 'id',
-                        'contents' => $song->id,
-                    ],
-                    [
-                        'name' => 'song_file',
-                        'contents' => fopen(storage_path('app/public/songs/').$file_name, 'r'),
-                    ],
-                ]
-            ]);
-            $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;*/
-
             $song->file_path = "/storage/songs/".$file_name;
 
             $song->save();
+
+            event(new SongUploaded($song, $file_name, $artists));
 
             /*$song->setConnection('mysql_r');
             $song->save();*/

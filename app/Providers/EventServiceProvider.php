@@ -21,6 +21,7 @@ class EventServiceProvider extends ServiceProvider
 
         'App\Events\SongUploaded' => [
             'App\Listeners\SendUploadedSong',
+            'App\Listeners\SaveSongRemote',
         ],
 
     ];

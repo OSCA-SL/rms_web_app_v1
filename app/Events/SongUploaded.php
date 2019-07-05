@@ -16,15 +16,19 @@ class SongUploaded
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $song;
+    public $filename;
+    public $artists;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Song $song)
+    public function __construct(Song $song, $filename, $artists)
     {
         $this->song = $song;
+        $this->filename = $filename;
+        $this->artists = $artists;
     }
 
     /**

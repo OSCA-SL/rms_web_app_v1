@@ -22,7 +22,7 @@ class CreateSongsTable extends Migration
             $table->unsignedBigInteger('added_by');
             $table->unsignedBigInteger('approved_by')->nullable();
             $table->string('details')->nullable();
-            $table->tinyInteger('hash_status')->default(0);
+            $table->tinyInteger('hash_status')->default(0); //0 - pending, 1 - success, 2 - failed
 //            $table->integer('status')->default(1); // 1 - active, 2 - approved (active), 3 - pending, 4 - rejected
             $table->timestamps();
         });
