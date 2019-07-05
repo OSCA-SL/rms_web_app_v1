@@ -156,6 +156,7 @@ class ArtistController extends Controller
             $artist->user_id = $user->id;
             $artist->membership_number = $request->input('membership_number');
             $artist->type = $request->input('type');
+            $artist->status = $request->input('status');
             $artist->save();
 
             /*$user->setConnection('mysql_r')->save();
