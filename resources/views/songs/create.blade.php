@@ -2,8 +2,9 @@
 
 @section('styles')
 
-    <link rel="stylesheet" href="/css/jquery-ui.css">
+    {{--<link rel="stylesheet" href="/css/jquery-ui.css">--}}
 
+    <link rel="stylesheet" href="/css/autocomplete.css">
     <!-- Wait Me Css -->
     <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
 
@@ -65,15 +66,14 @@
                                 <div class="form-group">
                                     <div class="form-line ui-widget">
                                         <label for="title">Title</label>
-                                        <input required type="text" id="title" name="title" class="form-control typeahead pb-2 mb-2" placeholder="Song Title" />
+                                        <input type="text" id="title" name="title" class="form-control typeahead pb-2 mb-2" placeholder="Song Title" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-12">
-
                                 <div class="input-group date">
                                     <div class="form-line" id="bs_datepicker_container">
-                                        <input name="released_at" type="text" class="form-control" placeholder="Released Date">
+                                        <input name="released_at" id="released_at" type="text" class="form-control" placeholder="Released Date">
                                     </div>
                                     <span class="input-group-addon">
                                             <i class="material-icons">date_range</i>
@@ -361,10 +361,28 @@
     <script src="/plugins/dropzone/dropzone.js"></script>
 
 
+    <script src="/js/autocomplete.js"></script>
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        /*An array containing all the country names in the world:*/
+        var availableSongs = [
+            @foreach($songs as $song)
+                "{{ $song->title }}",
+            @endforeach
+                ""
+        ];
+        availableSongs.pop();
+
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("title"), availableSongs);
+    </script>
+
+    {{--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
+
+            var date = $('#released_at').datepicker({ dateFormat: 'dd-mm-yyyy' }).val();
+
             var availableTags = [
                 @foreach($songs as $song)
                     "{{ $song->title }}",
@@ -376,8 +394,7 @@
                 source: availableTags
             });
         } );
-    </script>
-
+    </script>--}}
 
 
     <script>

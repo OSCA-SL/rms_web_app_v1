@@ -2,7 +2,7 @@
 
 @section('styles')
 
-    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/autocomplete.css">
 
     <!-- Wait Me Css -->
     <link href="/plugins/waitme/waitMe.css" rel="stylesheet" />
@@ -317,37 +317,31 @@
 
 @section('scripts')
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/autocomplete.js"></script>
+
     <script>
-        $( function() {
-            var name_tags = [
-                @foreach($artists as $artist)
-                    "{{ $artist->user->first_name." ".$artist->user->last_name }}",
-                @endforeach
-                    ""
-            ];
-            name_tags.pop();
-            $( "#first_name" ).autocomplete({
-                source: name_tags
-            });
+        /*An array containing all the country names in the world:*/
+        var name_tags = [
+            @foreach($artists as $artist)
+                "{{ $artist->user->first_name." ".$artist->user->last_name }}",
+            @endforeach
+                ""
+        ];
+        name_tags.pop();
 
-            $( "#last_name" ).autocomplete({
-                source: name_tags
-            });
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("first_name"), name_tags);
 
-            var membership_number_tags = [
-                @foreach($artists as $artist)
-                    "{{ $artist->membership_number }}",
-                @endforeach
-                    ""
-            ];
+        autocomplete(document.getElementById("last_name"), name_tags);
 
-            membership_number_tags.pop();
+        var membership_number_tags = [
+            @foreach($artists as $artist)
+                "{{ $artist->membership_number }}",
+            @endforeach
+                ""
+        ];
+        autocomplete(document.getElementById("membership_number"), membership_number_tags);
 
-            $( "#membership_number" ).autocomplete({
-                source: membership_number_tags
-            });
-        } );
     </script>
 
     <!-- Autosize Plugin Js -->

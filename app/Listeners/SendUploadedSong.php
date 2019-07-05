@@ -26,6 +26,7 @@ class SendUploadedSong
      */
     public function handle(SongUploaded $event)
     {
-        //
+        $song = $event->song;
+
     }
 }
