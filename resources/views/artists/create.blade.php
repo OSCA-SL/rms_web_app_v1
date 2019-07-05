@@ -322,7 +322,7 @@
         $( function() {
             var name_tags = [
                 @foreach($artists as $artist)
-                    "{{ $artist->first_name." ".$artist->last_name }}",
+                    "{{ $artist->user->first_name." ".$artist->user->last_name }}",
                 @endforeach
                     ""
             ];
@@ -345,7 +345,7 @@
             membership_number_tags.pop();
 
             $( "#membership_number" ).autocomplete({
-                source: name_tags
+                source: membership_number_tags
             });
         } );
     </script>
