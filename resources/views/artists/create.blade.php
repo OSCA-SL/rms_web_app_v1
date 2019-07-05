@@ -48,7 +48,7 @@
                         <small>Enter Artist Data</small>
                     </h2>
                     @foreach($artists as $artist)
-                        "{{ $artist->user->first_name." ".$artist->user->last_name }}",
+                        "{{ $artist->user }}",
                     @endforeach
                     {{--<ul class="header-dropdown m-r--5">
                         <li class="dropdown">
@@ -325,7 +325,7 @@
         $( function() {
             var name_tags = [
                 @foreach($artists as $artist)
-                    "{{ $artist->user->first_name." ".$artist->user->last_name }}",
+                    "{{ $artist->first_name." ".$artist->last_name }}",
                 @endforeach
                     ""
             ];
