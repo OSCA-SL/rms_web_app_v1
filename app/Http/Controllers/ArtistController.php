@@ -108,7 +108,6 @@ class ArtistController extends Controller
             $artists = Artist::where('user_id', auth()->user()->id)->get();
         }
 
-        return $artists;
         return view('artists.index', ['artists' => $artists]);
     }
 
@@ -119,7 +118,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        $artists = Artist::all(['membership_number']);
+        $artists = Artist::all();
 
         return view('artists.create', ['artists' => $artists]);
     }
