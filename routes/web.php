@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['domain' => 'rms'.env('APP_DOMAIN')], function () {
+Route::group(['domain' => 'rms.osca.lk'], function () {
 
     Route::get('/','HomeController@welcome')->name('welcome');
 
