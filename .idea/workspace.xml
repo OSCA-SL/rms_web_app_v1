@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="38e9525e-9e3e-4b2d-817d-99b1e4964191" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Listeners/SendUploadedSong.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendUploadedSong.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +49,7 @@
         <counts>
           <entry key="env" value="57" />
           <entry key="js" value="128" />
-          <entry key="php" value="2186" />
+          <entry key="php" value="2201" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -56,18 +57,18 @@
           <entry key=".env file" value="57" />
           <entry key="Blade" value="881" />
           <entry key="JavaScript" value="128" />
-          <entry key="PHP" value="1305" />
+          <entry key="PHP" value="1320" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="136">
+              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
               <folding>
                 <element signature="e#433#894#1#PHP" />
                 <element signature="e#944#1044#1#PHP" />
@@ -79,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SongController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="272">
+              <caret line="103" column="87" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="103" selection-end-column="87" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
                 <element signature="e#3175#3238#0#PHP" />
@@ -93,17 +94,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Listeners/SendUploadedSong.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="379">
+              <caret line="56" column="83" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+              <folding>
+                <element signature="e#33#61#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/queue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-714">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="153">
+              <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -180,8 +184,8 @@
         <option value="$PROJECT_DIR$/routes/channels.php" />
         <option value="$PROJECT_DIR$/routes/console.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Listeners/SendUploadedSong.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -432,18 +436,17 @@
       <workItem from="1560729372762" duration="6994000" />
       <workItem from="1561097794982" duration="10946000" />
       <workItem from="1561963864455" duration="6545000" />
-      <workItem from="1562309886180" duration="19652000" />
+      <workItem from="1562309886180" duration="19928000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109895000" />
+    <option name="totallyTimeSpent" value="110171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -458,7 +461,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50226927" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4977307" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4977307" visible="true" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -795,33 +798,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#433#894#1#PHP" />
-            <element signature="e#944#1044#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Events/SongUploaded.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SongController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-            <element signature="e#3175#3238#0#PHP" />
-            <element signature="e#3252#3584#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,17 +812,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Listeners/SendUploadedSong.php">
+    <entry file="file://$PROJECT_DIR$/config/queue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="153">
+          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/queue.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SongController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="272">
+          <caret line="103" column="87" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="103" selection-end-column="87" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+            <element signature="e#3175#3238#0#PHP" />
+            <element signature="e#3252#3584#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Listeners/SendUploadedSong.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="56" column="83" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+          <folding>
+            <element signature="e#33#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding>
+            <element signature="e#433#894#1#PHP" />
+            <element signature="e#944#1044#1#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>

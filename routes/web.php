@@ -35,7 +35,7 @@ Route::group(['domain' => 'rms.'.$domain], function () {
 
 });
 
-Route::group(['domain' => 'royalty'.$domain], function () {
+Route::group(['domain' => 'royalty.'.$domain], function () {
 
     Route::get('/information','HomeController@royaltyInfo')->name('royaltyInfo');
 
