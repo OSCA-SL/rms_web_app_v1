@@ -132,17 +132,22 @@ class ArtistController extends Controller
     {
         if (auth()->user()->isAdmin()){
             $user = new User;
-            $user->first_name = $request->input('first_name');
-            $user->last_name = $request->input('last_name');
-            $user->email = $request->input('email');
-            $user->dob = $request->input('dob');
-            $user->nic = $request->input('nic');
-            $user->mobile = $request->input('mobile');
-            $user->land = $request->input('land');
-            $user->address = $request->input('address');
+            $user->first_name = $request->input('first_name') !=""?$request->input('first_name'):"";
+            $user->last_name = $request->input('last_name') !=""?$request->input('last_name'):"";
+            if ($request->input('email') !=""){
+                $user->email = $request->input('email');
+            }
+            else{
+                $user->email = "rmsosca+".$user->first_name."-".$user->last_name."@gmail.com";
+            }
+            $user->dob = $request->input('dob') !=""?$request->input('dob'):null;
+            $user->nic = $request->input('nic') !=""?$request->input('nic'):null;
+            $user->mobile = $request->input('mobile') !=""?$request->input('mobile'):null;
+            $user->land = $request->input('land') !=""?$request->input('land'):null;
+            $user->address = $request->input('address') !=""?$request->input('address'):null;
             $user->role = 3;
             $user->added_by = auth()->user()->id;
-            $user->password = Hash::make($request->input('nic'));
+            $user->password = Hash::make($request->input('first_name'));
             $user->save();
 
 

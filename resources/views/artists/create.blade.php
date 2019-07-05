@@ -67,7 +67,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label for="membership_number">Membership Number</label>
-                                        <input required type="text" id="membership_number" name="membership_number" class="form-control typeahead pb-2 mb-2" placeholder="Membership Number" />
+                                        <input type="text" id="membership_number" name="membership_number" class="form-control typeahead pb-2 mb-2" placeholder="Membership Number" />
                                     </div>
                                 </div>
                             </div>
@@ -120,13 +120,13 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input required type="email" name="email" class="form-control" placeholder="Email" />
+                                        <input type="email" name="email" class="form-control" placeholder="Email (optional)" />
                                     </div>
                                 </div>
 
                                 <div class="input-group date">
                                     <div class="form-line" id="bs_datepicker_container">
-                                        <input required name="dob" type="text" class="form-control" placeholder="Date of Birth">
+                                        <input name="dob" type="text" class="form-control" placeholder="Date of Birth (Optional)">
 
                                     </div>
                                     <span class="input-group-addon">
@@ -137,24 +137,24 @@
 
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="nic" class="form-control" placeholder="NIC" />
+                                        <input type="text" name="nic" class="form-control" placeholder="NIC (Optional)" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile" />
+                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile (Optional)" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="land" class="form-control" placeholder="Land Phone" />
+                                        <input type="text" name="land" class="form-control" placeholder="Land Phone (Optional)" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="address" class="form-control" placeholder="Address" />
+                                        <input type="text" name="address" class="form-control" placeholder="Address (Optional)" />
                                     </div>
                                 </div>
                             </div>
