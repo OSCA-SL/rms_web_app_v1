@@ -33,5 +33,12 @@ Route::group(['domain' => 'rms.osca.lk'], function () {
 
 });
 
+Route::group(['domain' => 'royalty.osca.lk'], function () {
+
+    Route::get('/information','HomeController@royaltyInfo')->name('royaltyInfo');
+
+
+});
+
 Route::get('/','HomeController@welcome')->name('welcome');
 

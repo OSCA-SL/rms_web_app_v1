@@ -26,7 +26,8 @@ class ChannelController extends Controller
      */
     public function create()
     {
-        //
+        $channels = Channel::all();
+        return view('channels.create', ['channels' => $channels]);
     }
 
     /**
