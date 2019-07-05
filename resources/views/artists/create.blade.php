@@ -113,7 +113,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input required type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" />
+                                        <input required type="text" name="first_name" id="first_name" class="form-control typeahead" placeholder="First Name" />
                                     </div>
                                 </div>
                                 <div class="form-group">
