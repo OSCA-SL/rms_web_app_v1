@@ -12,7 +12,7 @@ use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 
-class SendUploadedSong /*implements ShouldQueue*/
+class SendUploadedSong implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -47,6 +47,7 @@ class SendUploadedSong /*implements ShouldQueue*/
         $song->artists()->attach($artists['producers'], ['type' => 4]);
 
         $client = new Client();
+//        dd(config('app.radio_server'));
         $promise = $client->postAsync(config('app.radio_server'), [
             'multipart' => [
                 [
@@ -68,7 +69,7 @@ class SendUploadedSong /*implements ShouldQueue*/
             ]
         ]);
 
-        $promise->then(
+       /* $promise->then(
             function (ResponseInterface $res) use ($song){
                 $response = $res->getStatusCode();
                 $song->setConnection('mysql');
@@ -83,7 +84,9 @@ class SendUploadedSong /*implements ShouldQueue*/
                 $error->message = $message.", METHOD: ".$method;
                 $error->save();
             }
-        );
+        );*/
+
+        $promise->wait();
 
 
 
