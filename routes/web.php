@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['domain' => 'rms.'.env('APP_DOMAIN', 'localhost')], function () {
+Route::group(['domain' => 'rms'.env('APP_DOMAIN')], function () {
 
     Route::get('/','HomeController@welcome')->name('welcome');
 
