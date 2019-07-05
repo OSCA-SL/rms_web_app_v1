@@ -100,6 +100,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
+
         if (auth()->user()->isAdmin()){
             $artists = Artist::all();
         }
@@ -107,6 +108,7 @@ class ArtistController extends Controller
             $artists = Artist::where('user_id', auth()->user()->id)->get();
         }
 
+        return $artists;
         return view('artists.index', ['artists' => $artists]);
     }
 
