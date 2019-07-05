@@ -325,7 +325,7 @@
         $( function() {
             var name_tags = [
                 @foreach($artists as $artist)
-                    "{{ $artist->first_name." ".$artist->last_name }}",
+                    "{{ $artist->user->first_name." ".$artist->user->first_name }}",
                 @endforeach
                     ""
             ];
