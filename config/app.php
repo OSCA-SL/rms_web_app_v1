@@ -3,8 +3,8 @@
 return [
 
     'radio_server' => env('RADIO_SERVER_URL', 'song-upload.osca.lk/song'),
-    'radio_username' => env('API_USERNAME', 'oscarms'),
-    'radio_password' => env('API_PASSWORD', 'Osca@radio'),
+    'radio_username' => env('API_USERNAME', 'TheHAcker'),
+    'radio_password' => env('API_PASSWORD', 'sdfajksfh'),
     'app_domain' => env('APP_DOMAIN', 'localhost'),
     /*
     |--------------------------------------------------------------------------

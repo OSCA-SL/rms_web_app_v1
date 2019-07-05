@@ -67,9 +67,7 @@ class SendUploadedSong implements ShouldQueue
                     'contents' => fopen(storage_path('app/public/songs/').$file_name, 'r'),
                 ],
             ]
-        ]);
-
-       /* $promise->then(
+        ])->then(
             function (ResponseInterface $res) use ($song){
                 $response = $res->getStatusCode();
                 $song->setConnection('mysql');
@@ -84,10 +82,12 @@ class SendUploadedSong implements ShouldQueue
                 $error->message = $message.", METHOD: ".$method;
                 $error->save();
             }
-        );*/
+        );
 
-        $promise->wait();
-
+        $res = $promise->wait();
+        $error = new Error;
+        $error->message = $res;
+        $error->save();
 
 
 
