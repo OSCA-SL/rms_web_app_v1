@@ -70,7 +70,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <label for="membership_number">Membership Number</label>
-                                        <input type="text" id="membership_number" name="membership_number" class="form-control typeahead pb-2 mb-2" placeholder="Membership Number" />
+                                        <input type="text" id="membership_number" name="membership_number" class="form-control pb-2 mb-2" placeholder="Membership Number" />
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input required type="text" name="first_name" id="first_name" class="form-control typeahead" placeholder="First Name" />
+                                        <input required type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" />
                                     </div>
                                 </div>
                                 <div class="form-group">
