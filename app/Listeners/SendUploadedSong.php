@@ -12,7 +12,7 @@ use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 
-class SendUploadedSong implements ShouldQueue
+class SendUploadedSong /*implements ShouldQueue*/
 {
     /**
      * Create the event listener.
