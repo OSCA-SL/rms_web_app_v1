@@ -5,6 +5,7 @@ return [
     'radio_server' => env('RADIO_SERVER_URL', '124.43.10.115:8880/song'),
     'radio_username' => env('API_USERNAME', 'oscarms'),
     'radio_password' => env('API_PASSWORD', 'Osca@radio'),
+    'app_domain' => env('APP_DOMAIN', 'localhost'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
