@@ -58,6 +58,7 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Membership Number</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
@@ -75,6 +76,7 @@
                             </thead>
                             <tfoot>
                             <tr>
+                                <th>ID</th>
                                 <th>Membership Number</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
@@ -94,7 +96,7 @@
 
                                 @foreach($artists as $artist)
                                     <tr>
-
+                                        <td>{{ $artist->id }}</td>
                                         <td>{{ $artist->membership_number }}</td>
                                         <td>{{ $artist->user->first_name }}</td>
                                         <td>{{ $artist->user->last_name }}</td>
