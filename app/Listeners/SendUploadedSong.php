@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Error;
 use App\Events\SongUploaded;
+use App\Models\Song;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -36,15 +37,17 @@ class SendUploadedSong /*implements ShouldQueue*/
         $file_name = $event->filename;
         $artists = $event->artists;
 
-        $song->setConnection('mysql_r');
-        $song->save();
+        $song_r = new Song($song->toArray());
 
-        $song->artists()->attach($artists['singers'], ['type' => 1]);
-        $song->artists()->attach($artists['music_directors'], ['type' => 2]);
+        $song_r->setConnection('mysql_r');
+        $song_r->save();
 
-        $song->artists()->attach($artists['song_writers'], ['type' => 3]);
+        $song_r->artists()->attach($artists['singers'], ['type' => 1]);
+        $song_r->artists()->attach($artists['music_directors'], ['type' => 2]);
 
-        $song->artists()->attach($artists['producers'], ['type' => 4]);
+        $song_r->artists()->attach($artists['song_writers'], ['type' => 3]);
+
+        $song_r->artists()->attach($artists['producers'], ['type' => 4]);
 
         $client = new Client();
 //        dd(config('app.radio_server'));
@@ -70,10 +73,8 @@ class SendUploadedSong /*implements ShouldQueue*/
         ])->then(
             function (ResponseInterface $res) use ($song){
                 $response = $res->getStatusCode();
-                $song->setConnection('mysql');
                 $song->hash_status = 3;
                 $song->save();
-                $song->setConnection('mysql_r');
             },
             function (RequestException $e){
                 $message = $e->getMessage();
@@ -85,17 +86,18 @@ class SendUploadedSong /*implements ShouldQueue*/
         );
 
         $res = $promise->wait();
-        $error = new Error;
+        /*$error = new Error;
         $error->message = $res;
-        $error->save();
+        $error->save();*/
 
 
 
         $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
         $song->save();
 
-        $song->setConnection('mysql');
-        $song->save();
+
+        $song_r->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
+        $song_r->save();
 
     }
 }
