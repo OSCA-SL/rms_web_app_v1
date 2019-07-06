@@ -92,11 +92,11 @@ class SendUploadedSong /*implements ShouldQueue*/
 
 
 
-        $song->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
+        $song->remote_file_path = "http://song-upload.osca.lk/storage/songs/".$file_name;
         $song->save();
 
 
-        $song_r->remote_file_path = "http://song-upload.osca.lk/storage/".$file_name;
+        $song_r->remote_file_path = "http://song-upload.osca.lk/storage/songs/".$file_name;
         $song_r->save();
 
     }
