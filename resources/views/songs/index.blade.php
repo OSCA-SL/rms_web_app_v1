@@ -98,12 +98,16 @@
                                     <td>{{ $song->id }}</td>
                                     <td>{{ $song->title }}</td>
                                     <td>
-                                        <audio controls>
+                                        <audio controls preload="none">
                                             <source src="{{ $song->file_path }}" type="audio/mpeg">
                                         </audio>
 
                                     </td>
-                                    <td>{{ $song->remote_file_path }}</td>
+                                    <td>
+                                        <audio controls preload="none">
+                                                <source src="{{ $song->remote_file_path }}" type="audio/mpeg">
+                                        </audio>
+                                    </td>
                                     <td>{{ $song->released_at }}</td>
 
                                     <td>
